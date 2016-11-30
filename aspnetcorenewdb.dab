@@ -1,0 +1,26 @@
+{
+  "Services": {
+    "postgres": {
+      "Env": [
+        "POSTGRES_PASSWORD=password"
+      ], 
+      "Image": "postgres@sha256:3da198a1846d1fa6cf55978c8326d5c7e801155843c469ce9213cdbb25b5ae33", 
+      "Networks": [
+        "default"
+      ]
+    }, 
+    "web": {
+      "Image": "friism/pg-test-web@sha256:12df64cd5553a89b9955a541068bd0f55a025553b4df0ba1f8c42ccb04104a47", 
+      "Networks": [
+        "default"
+      ], 
+      "Ports": [
+        {
+          "Port": 5000, 
+          "Protocol": "tcp"
+        }
+      ]
+    }
+  }, 
+  "Version": "0.1"
+}
